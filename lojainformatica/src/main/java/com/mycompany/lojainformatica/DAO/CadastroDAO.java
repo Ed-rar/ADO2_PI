@@ -31,13 +31,20 @@ public class CadastroDAO {
             conexao = DriverManager.getConnection(url,login,senha);
             
             //Passo 3 - Criar um objeto Statement
-            Statement instrucaoSQL = conexao.createStatement();
+            //Statement instrucaoSQL = conexao.createStatement();
             
             //Passo 4 - Executar comando SQL 
-            String query = "INSERT INTO computador (marca, HD, Processador) values ('%s','%s','%s')";
-            boolean linhasAfetadas = instrucaoSQL.execute(String.format(query, marca, hd, processador));
+            //String query = "INSERT INTO computador (marca, HD, Processador) values ('%s','%s','%s')";
+            //boolean linhasAfetadas = instrucaoSQL.execute(String.format(query, marca, hd, processador));
             
-            if(linhasAfetadas){
+            PreparedStatement comandoSQL = conexao.prepareStatement("INSERT INTO computador (marca, HD, Processador) VALUES (?,?,?) ");
+            
+            comandoSQL.setString(1, marca);
+            comandoSQL.setString(2, hd);
+            comandoSQL.setString(3, processador);
+            
+            int linhasAfetadas = comandoSQL.executeUpdate();
+            if(linhasAfetadas>0){
                 retorno = true;
             }else{
                 retorno = false;
