@@ -92,6 +92,7 @@ public class CadastroDAO {
                 Computador objComputador = new Computador();
                 
                 objComputador.setIdComputador(rs.getInt("idComputador"));
+                objComputador.setMarca(rs.getString("marca"))
                 objComputador.setHD(rs.getString("hd"));
                 objComputador.setProcessador(rs.getString("processador"));
 
@@ -99,7 +100,7 @@ public class CadastroDAO {
 
             }
         } catch (Exception ex) {
-            System.out.println("Erro ao listar copmutadores");
+            System.out.println("Erro ao listar computadores");
         } finally {
 
             try {
