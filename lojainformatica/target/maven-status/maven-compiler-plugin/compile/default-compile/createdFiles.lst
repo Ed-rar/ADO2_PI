@@ -1,3 +1,7 @@
-com\mycompany\lojainformatica\Conexão_SGBD$1.class
-com\mycompany\lojainformatica\Conexão_SGBD.class
 com\mycompany\lojainformatica\Computador.class
+com\mycompany\lojainformatica\view\CadastrarProduto$1.class
+com\mycompany\lojainformatica\DAO\CadastroDAO.class
+com\mycompany\lojainformatica\view\CadastrarProduto.class
+com\mycompany\lojainformatica\view\ConsultaProduto$1.class
+com\mycompany\lojainformatica\view\ConsultaProduto.class
+com\mycompany\lojainformatica\view\CadastrarProduto$2.class

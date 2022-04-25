@@ -37,13 +37,14 @@ public class CadastroDAO {
             //String query = "INSERT INTO computador (marca, HD, Processador) values ('%s','%s','%s')";
             //boolean linhasAfetadas = instrucaoSQL.execute(String.format(query, marca, hd, processador));
             
-            PreparedStatement comandoSQL = conexao.prepareStatement("INSERT INTO computador (marca, HD, Processador) VALUES (?,?,?) ");
+            PreparedStatement comandoSQL = conexao.prepareStatement("INSERT INTO computador (marca, hd, processador) VALUES (?,?,?) ");
             
             comandoSQL.setString(1, marca);
             comandoSQL.setString(2, hd);
             comandoSQL.setString(3, processador);
             
             int linhasAfetadas = comandoSQL.executeUpdate();
+            
             if(linhasAfetadas>0){
                 retorno = true;
             }else{
