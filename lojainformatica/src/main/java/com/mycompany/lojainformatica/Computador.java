@@ -12,6 +12,7 @@ package com.mycompany.lojainformatica;
 public class Computador {
 
 public static String marca = "EduardoRamos";
+public int idComputador;
 public String HD;
 public String Processador;
 
@@ -23,6 +24,14 @@ public Computador() {}
 
     public static void setMarca(String marca) {
         Computador.marca = marca;
+    }
+    
+    public int getIdComputador() {
+        return idComputador;
+    }
+    
+    public void setIdComputador(int idComputador){
+        this.idComputador = idComputador;
     }
 
     public String getHD() {
