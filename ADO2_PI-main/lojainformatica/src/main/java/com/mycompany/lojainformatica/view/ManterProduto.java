@@ -6,6 +6,7 @@ package com.mycompany.lojainformatica.view;
 
 import com.mycompany.lojainformatica.Computador;
 import com.mycompany.lojainformatica.DAO.CadastroDAO;
+import static com.mycompany.lojainformatica.DAO.CadastroDAO.listarComputador;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -142,14 +143,25 @@ public class ManterProduto extends javax.swing.JFrame {
                         
         }else{
             //fazer um LIKE:
+            ArrayList<Computador> listaComputador = CadastroDAO.listarComputadorFiltro(processador);
+            DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
             
+            modelo.setRowCount(0);
+
+            for(Computador computador : listaComputador){
+                modelo.addRow(new String[]{String.valueOf(computador.getIdComputador()),
+                                            computador.getMarca(),
+                                            computador.getHD(),
+                                            computador.getProcessador()
+                });
+            }
         }
     }//GEN-LAST:event_btnProcConsultaActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         // TODO: excluir um cliente
         
-        if(jTable1.getSelectedRow()>0){
+        if(jTable1.getSelectedRow()>=0){
             
             int indice = jTable1.getSelectedRow();
             DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();

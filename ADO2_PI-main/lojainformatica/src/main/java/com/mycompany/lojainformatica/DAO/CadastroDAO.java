@@ -118,6 +118,52 @@ public class CadastroDAO {
         return listaRetorno;
     }
     
+    public static ArrayList<Computador> listarComputadorFiltro(String processador) {
+
+        Connection conexao = null;
+        ArrayList<Computador> listaRetorno = new ArrayList<Computador>();
+        ResultSet rs = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conexao = DriverManager.getConnection(url, login, senha);
+
+            PreparedStatement sql = conexao.prepareStatement("SELECT * FROM computador WHERE processador LIKE %?%");
+            sql.setString(1,processador);
+            
+            rs = sql.executeQuery();
+
+            while (rs.next()) {
+
+                //instacio um objeto da classe da Classe que eu criei ('Computador' no caso) e leio um ResultSet
+                Computador objComputador = new Computador();
+                
+                objComputador.setIdComputador(rs.getInt("idComputador"));
+                objComputador.setMarca(rs.getString("marca"));
+                objComputador.setHD(rs.getString("hd"));
+                objComputador.setProcessador(rs.getString("processador"));
+
+                listaRetorno.add(objComputador);
+
+            }
+        } catch (Exception ex) {
+            System.out.println("Erro ao listar computadores");
+        } finally {
+
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (conexao != null) {
+                    conexao.close();
+                }
+            } catch(Exception ex){
+                System.out.println("não foi possivel fechar conexão com banco de dados");
+            }
+
+        }
+        return listaRetorno;
+    }
+    
     public static boolean excluir(int idComputador) {
 
         Connection conexao = null;

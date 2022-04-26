@@ -36,10 +36,10 @@ public class CadastrarProduto extends javax.swing.JFrame {
         lblHD = new javax.swing.JLabel();
         lblProcessador = new javax.swing.JLabel();
         lblCadastro = new javax.swing.JLabel();
-        txtMarca = new javax.swing.JTextField();
         txtHD = new javax.swing.JTextField();
         txtProcessador = new javax.swing.JTextField();
         btnCadastrar = new javax.swing.JButton();
+        lblMarcaPadrao = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,6 +58,8 @@ public class CadastrarProduto extends javax.swing.JFrame {
                 btnCadastrarActionPerformed(evt);
             }
         });
+
+        lblMarcaPadrao.setText("EduardoRamos");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -79,8 +81,8 @@ public class CadastrarProduto extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtProcessador, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
-                            .addComponent(txtMarca)
-                            .addComponent(txtHD))))
+                            .addComponent(txtHD)
+                            .addComponent(lblMarcaPadrao, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -89,9 +91,9 @@ public class CadastrarProduto extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(lblCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblMarca)
-                    .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblMarcaPadrao, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblHD)
@@ -103,14 +105,14 @@ public class CadastrarProduto extends javax.swing.JFrame {
                         .addComponent(lblProcessador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(3, 3, 3)))
                 .addComponent(btnCadastrar)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-        String marca = txtMarca.getText();
+        String marca = lblMarcaPadrao.getText();
         String hd = txtHD.getText();
         String processador = txtProcessador.getText();
         
@@ -164,9 +166,9 @@ public class CadastrarProduto extends javax.swing.JFrame {
     private javax.swing.JLabel lblCadastro;
     private javax.swing.JLabel lblHD;
     private javax.swing.JLabel lblMarca;
+    private javax.swing.JLabel lblMarcaPadrao;
     private javax.swing.JLabel lblProcessador;
     private javax.swing.JTextField txtHD;
-    private javax.swing.JTextField txtMarca;
     private javax.swing.JTextField txtProcessador;
     // End of variables declaration//GEN-END:variables
 }

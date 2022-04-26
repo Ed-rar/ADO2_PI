@@ -41,8 +41,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="txtProcessador" pref="227" max="32767" attributes="0"/>
-                          <Component id="txtMarca" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtHD" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblMarcaPadrao" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -56,9 +56,9 @@
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Component id="lblCadastro" min="-2" pref="41" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblMarca" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtMarca" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblMarca" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblMarcaPadrao" min="-2" pref="14" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -74,7 +74,7 @@
                   </Group>
               </Group>
               <Component id="btnCadastrar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="85" max="32767" attributes="0"/>
+              <EmptySpace pref="91" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -103,8 +103,6 @@
         <Property name="text" type="java.lang.String" value="Cadastrar Produto: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtMarca">
-    </Component>
     <Component class="javax.swing.JTextField" name="txtHD">
     </Component>
     <Component class="javax.swing.JTextField" name="txtProcessador">
@@ -116,6 +114,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrarActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMarcaPadrao">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="EduardoRamos"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
