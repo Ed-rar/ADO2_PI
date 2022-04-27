@@ -42,7 +42,7 @@ public class ManterProduto extends javax.swing.JFrame {
         lblFiltro = new javax.swing.JLabel();
         btnExcluir = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
         lblTitulo.setText("Consulta de produto: ");

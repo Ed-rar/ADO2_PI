@@ -127,8 +127,8 @@ public class CadastroDAO {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conexao = DriverManager.getConnection(url, login, senha);
 
-            PreparedStatement sql = conexao.prepareStatement("SELECT * FROM computador WHERE processador LIKE %?%");
-            sql.setString(1,processador);
+            PreparedStatement sql = conexao.prepareStatement("SELECT * FROM computador WHERE processador LIKE '%"+processador+"%'");
+            //sql.setString(0,processador);
             
             rs = sql.executeQuery();
 
@@ -145,7 +145,7 @@ public class CadastroDAO {
                 listaRetorno.add(objComputador);
 
             }
-        } catch (Exception ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             System.out.println("Erro ao listar computadores");
         } finally {
 
